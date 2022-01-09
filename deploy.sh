@@ -27,8 +27,6 @@ start_serve() {
     gitbook serve
 }
 
-echo '本次执行命令'[$type]'支持命令 serve-启动本地服务 push-打包并发布到github'
-
 if [ $type == 'serve' ];then
     echo '启动本地服务开始.....'
     start_serve
@@ -40,6 +38,8 @@ elif [ $type == 'push' ];then
     git add .
     git commit -m 'update'
     git push
+elif [ $type == 'help' ];then
+    echo '支持命令 serve-启动本地服务 push-打包并发布到github'    
 else
     echo '命令无效'
 fi        
